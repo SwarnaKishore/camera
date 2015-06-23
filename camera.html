@@ -1,0 +1,23 @@
+<head>
+  <title>camera</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> list}}
+  {{> takePhoto}}
+</body>
+  
+<template name="list">
+  {{#each photos}}
+
+        <img src="{{image}}" />
+   
+  {{/each}}
+</template>
+
+<template name="takePhoto">
+  <p><input type="button" class="capture" value="Take Photo"></p>
+</template>
+
