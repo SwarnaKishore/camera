@@ -1,1 +1,41 @@
-/* CSS declarations go here */
+body{text-align:center;background:#ececec;font-family:Tahoma, Geneva, sans-serif}
+section{display:inline-block}
+canvas{border:1px solid #000}
+
+img{
+	width:300px;
+	height:300px;
+}
+
+.grayscale{
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+
+}
+
+.invert{
+	filter: invert(100%);
+  -webkit-filter: invert(100%);
+  -moz-filter: invert(100%);
+  -o-filter: invert(100%);
+  -ms-filter: invert(100%);
+}
+
+.brightness{
+	filter: brightness(1);
+  -webkit-filter: brightness(1);
+  -moz-filter: brightness(1);
+  -o-filter: brightness(1);
+  -ms-filter: brightness(1);
+}
+
+.blur{
+	-webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -ms-filter: blur(5px);
+  -o-filter: blur(5px);
+  filter: blur(5px);
+}

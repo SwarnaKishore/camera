@@ -3,21 +3,26 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>Welcome to CSS filters app!</h1>
 
   {{> list}}
   {{> takePhoto}}
+
+<!--<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
 </body>
+
   
 <template name="list">
   {{#each photos}}
 
         <img src="{{image}}" />
-   
+        <button type="button" id="blur">blur</button>
+ 
   {{/each}}
 </template>
 
 <template name="takePhoto">
   <p><input type="button" class="capture" value="Take Photo"></p>
 </template>
+
 

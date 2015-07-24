@@ -1,6 +1,6 @@
 Photos = new Meteor.Collection("photos");
-
 if (Meteor.isClient) {
+
   Template.takePhoto.events({
     'click .capture': function(){
       MeteorCamera.getPicture(function (error, data) {
@@ -8,6 +8,11 @@ if (Meteor.isClient) {
           onSuccess(data);
         }
       });
+    },
+    'click #blur': function(){
+      //console.log('button click method');
+      //  Session.set('filters', 'blur');
+      //  console.log(Session.get('filters'));
     }
   });
 
@@ -24,7 +29,13 @@ if (Meteor.isClient) {
     Template.list.helpers({
     photos: function () {
       return Photos.find({}, {sort: {"createdAt": -1}});
+    },
+    filters: function(){
+      //return Session.get('filters');
+     // console.log(Session.get('filters'));
     }
+
+
   });
   
 }//isClient
