@@ -5,24 +5,22 @@
 <body>
   <h1>Welcome to CSS filters app!</h1>
 
-  {{> list}}
   {{> takePhoto}}
 
 <!--<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
 </body>
 
-  
-<template name="list">
-  {{#each photos}}
-
-        <img src="{{image}}" />
-        <button type="button" id="blur">blur</button>
- 
-  {{/each}}
-</template>
 
 <template name="takePhoto">
   <p><input type="button" class="capture" value="Take Photo"></p>
+  <p><img src="{{photo}}">
+ <input type="button" id="blur" value="blur">
+<input type="button" id="grayscale" value="grayscale">
+<input type="button" id="invert" value="invert">
+<input type="button" id="brightness" value="brightness">
+
+ </p>
+  
 </template>
 
 
