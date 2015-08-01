@@ -7,20 +7,78 @@
 
   {{> takePhoto}}
 
-<!--<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 </body>
 
 
 <template name="takePhoto">
+
   <p><input type="button" class="capture" value="Take Photo"></p>
-  <p><img src="{{photo}}">
+  <p>
+<div id="imageContainer">
+  <img src="{{photo}}">
+  </div>
  <input type="button" id="blur" value="blur">
 <input type="button" id="grayscale" value="grayscale">
 <input type="button" id="invert" value="invert">
 <input type="button" id="brightness" value="brightness">
-
+		{{> applyFilters}}
  </p>
   
+</template>
+
+<template name="applyFilters">
+<div class="sliders">
+  <form id="imageEditor">
+    <p>
+      <label for="gs">Grayscale</label>
+      <input id="gs" name="gs" type="range" min="0" max="100" value="0">
+    </p>
+
+    <p>
+      <label for="blur">Blur</label>
+      <input id="blur" name="blur" type="range" min="0" max="10" value="0">
+    </p>
+
+    <p>
+      <label for="br">Exposure</label>
+      <input id="br" name="br" type="range" min="0" max="200" value="100">
+    </p>
+
+    <p>
+      <label for="ct">Contrast</label>
+      <input id="ct" name="ct" type="range" min="0" max="200" value="100">
+    </p>
+
+    <p>
+      <label for="huer">Hue Rotate</label>
+      <input id="huer" name="huer" type="range" min="0" max="360" value="0">
+    </p>
+
+    <p>
+      <label for="opacity">Opacity</label>
+      <input id="opacity" name="opacity" type="range" min="0" max="100" value="100">
+    </p>
+
+    <p>
+      <label for="invert">Invert</label>
+      <input id="invert" name="invert" type="range" min="0" max="100" value="0">
+    </p>
+
+    <p>
+      <label for="saturate">Saturate</label>
+      <input id="saturate" name="saturate" type="range" min="0" max="500" value="100">
+    </p>
+
+    <p>
+      <label for="sepia">Sepia</label>
+      <input id="sepia" name="sepia" type="range" min="0" max="100" value="0">
+    </p>
+
+    <input type="reset" form="imageEditor" id="reset" value="Reset" />
+
+  </form>
+</div>	
 </template>
 
 
